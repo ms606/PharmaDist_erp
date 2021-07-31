@@ -1,13 +1,14 @@
 const e = require('express');
-const stationeryItems = require('../db_apis/stationeryItems.js');
+const userLogin = require('../db_apis/userLoginApi.js');
  
 async function get(req, res, next) {
   try {
     const context = {};
  
-    context.id = parseInt(req.params.id, 10);
- 
-    const rows = await stationeryItems.find(context);
+    context.id = parseInt(req.params.ucode);
+    console.log(context);
+
+    const rows = await userLogin.find(context);
  
     if (req.params.id) {
       if (rows.length === 1) {

@@ -4,6 +4,7 @@ const router = new express.Router();
 const employees = require('../controllers/employees.js')
 const stationaryItems = require('../controllers/stationeryItems.js')
 const companyprofile = require('../controllers/companyprofile.js')
+const userLogin = require('../controllers/userLoginController.js')
 
 router.route('/employees/:id?')
     .get(employees.get)
@@ -16,5 +17,7 @@ router.route('/stationaryItems/')
 
 router.route('/companyprofile')
     .get(companyprofile.get)
+
+router.route('/userLogin/:ucode?').get(userLogin.get)    
 
 module.exports = router;
