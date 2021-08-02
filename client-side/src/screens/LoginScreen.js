@@ -1,15 +1,20 @@
 import React, {useEffect, useState} from 'react'
 import { Card, Button, Form, Container, Row, Col } from 'react-bootstrap'
-import axios from 'axios'
+import { login } from '../actions/userActions'
+import { useDispatch } from 'react-redux'
 
 const LoginScreen = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
    
+
+    const dispatch = useDispatch()
+
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log(e.target)
+        console.log(e.target)        
+        dispatch(login(email, password))
     }
 
     return (
