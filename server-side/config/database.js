@@ -1,8 +1,10 @@
+require('dotenv').config()
+
 module.exports = {
     hrPool: {
-        user: "noor15",
-        password: "noor",
-        connectString: "103.245.193.156/orcl",
+        user: process.env.USER,
+        password: process.env.PASSWORD,
+        connectString: process.env.CONNECTSTRING,
         poolMin: 10,
         poolMax: 10,
         poolIncrement: 0
