@@ -19,6 +19,6 @@ router.route('/companyprofile')
     .get(companyprofile.get)
 
 router.route('/users/login')
-    .get(userLogin.get)    
+    .post(userLogin.post)    
 
 module.exports = router;

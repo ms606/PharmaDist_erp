@@ -1,20 +1,21 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import { Card, Button, Form, Container, Row, Col } from 'react-bootstrap'
 import { login } from '../actions/userActions'
 import { useDispatch } from 'react-redux'
+//import { Link } from 'react-router-dom'
+//import { useSelector } from 'react-redux'
 
-const LoginScreen = () => {
+const LoginScreen = ({ location, history}) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-   
-
     const dispatch = useDispatch()
+   
 
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log(e.target)        
         dispatch(login(email, password))
+        history.push('/')
     }
 
     return (
@@ -41,7 +42,7 @@ const LoginScreen = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control 
-                        type="email" 
+                        type="text" 
                         placeholder="Enter email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)} />
