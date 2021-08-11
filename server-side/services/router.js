@@ -12,12 +12,13 @@ router.route('/employees/:id?')
     .put(employees.put)
     .delete(employees.delete);
 
-router.route('/stationaryItems/')
+router.route('/stationaryItems/:sname?')
     .get(stationaryItems.get)
 
 router.route('/companyprofile')
     .get(companyprofile.get)
 
-router.route('/userLogin/:ucode?').get(userLogin.get)    
+router.route('/users/login')
+    .post(userLogin.post)    
 
 module.exports = router;

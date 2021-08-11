@@ -5,8 +5,8 @@ async function get(req, res, next) {
   try {
     const context = {};
  
-    context.id = parseInt(req.params.id, 10);
- 
+    context.sname = req.params.sname;
+    console.log(context)
     const rows = await stationeryItems.find(context);
  
     if (req.params.id) {
