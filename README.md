@@ -1,3 +1,3 @@
 # PharmaDist_erp
 
-This is for
+Oracle Instant Client requires 12+ version to run. 
